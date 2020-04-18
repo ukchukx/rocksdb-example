@@ -1,7 +1,9 @@
 package com.ukchukx.rocksdbexample.repository;
 
+import java.util.Optional;
+
 public interface KVRepository<K, V> {
-  void save(K key, V value);
-  V find(K key);
-  void delete(K key);
+  boolean save(K key, V value);
+  Optional<V> find(K key);
+  boolean delete(K key);
 }
